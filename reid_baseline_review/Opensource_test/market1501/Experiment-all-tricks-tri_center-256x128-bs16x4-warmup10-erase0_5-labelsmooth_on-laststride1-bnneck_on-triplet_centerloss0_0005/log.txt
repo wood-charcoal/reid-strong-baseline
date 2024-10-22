@@ -1,10 +1,10 @@
-2024-10-22 22:25:31,583 reid_baseline INFO: Using 1 GPUS
-2024-10-22 22:25:31,583 reid_baseline INFO: Namespace(config_file='configs/softmax_triplet_with_center.yml', opts=['MODEL.DEVICE_ID', "('0')", 'DATASETS.NAMES', "('market1501')", 'DATASETS.ROOT_DIR', "('/home/ai/PycharmProjects/datasets')", 'OUTPUT_DIR', "('/home/ai/PycharmProjects/reid-strong-baseline/reid_baseline_review/Opensource_test/market1501/Experiment-all-tricks-tri_center-256x128-bs16x4-warmup10-erase0_5-labelsmooth_on-laststride1-bnneck_on-triplet_centerloss0_0005')"])
-2024-10-22 22:25:31,583 reid_baseline INFO: Loaded configuration file configs/softmax_triplet_with_center.yml
-2024-10-22 22:25:31,583 reid_baseline INFO: 
+2024-10-22 23:25:15,674 reid_baseline INFO: Using 1 GPUS
+2024-10-22 23:25:15,675 reid_baseline INFO: Namespace(config_file='configs/softmax_triplet_with_center.yml', opts=['MODEL.DEVICE_ID', "('0')", 'DATASETS.NAMES', "('market1501')", 'DATASETS.ROOT_DIR', "('/root/autodl-tmp/datasets')", 'OUTPUT_DIR', "('/root/reid-strong-baseline/reid_baseline_review/Opensource_test/market1501/Experiment-all-tricks-tri_center-256x128-bs16x4-warmup10-erase0_5-labelsmooth_on-laststride1-bnneck_on-triplet_centerloss0_0005')"])
+2024-10-22 23:25:15,675 reid_baseline INFO: Loaded configuration file configs/softmax_triplet_with_center.yml
+2024-10-22 23:25:15,675 reid_baseline INFO: 
 MODEL:
   PRETRAIN_CHOICE: 'imagenet'
-  PRETRAIN_PATH: '/home/ai/.cache/torch/hub/checkpoints/resnet50-0676ba61.pth'
+  PRETRAIN_PATH: '/root/.cache/torch/hub/checkpoints/resnet50-0676ba61.pth'
   METRIC_LOSS_TYPE: 'triplet_center'
   IF_LABELSMOOTH: 'on'
   IF_WITH_CENTER: 'yes'
@@ -24,7 +24,7 @@ DATASETS:
 
 DATALOADER:
   SAMPLER: 'softmax_triplet'
-  NUM_INSTANCE: 2
+  NUM_INSTANCE: 8
   NUM_WORKERS: 4
 
 SOLVER:
@@ -46,7 +46,7 @@ SOLVER:
   BIAS_LR_FACTOR: 1
   WEIGHT_DECAY: 0.0005
   WEIGHT_DECAY_BIAS: 0.0005
-  IMS_PER_BATCH: 16
+  IMS_PER_BATCH: 128
 
   STEPS: [40, 70]
   GAMMA: 0.1
@@ -66,18 +66,18 @@ TEST:
   NECK_FEAT: 'after'
   FEAT_NORM: 'yes'
 
-OUTPUT_DIR: "/home/ai/PycharmProjects/reid-strong-baseline/reid_baseline_review/Opensource_test/market1501/Experiment-all-tricks-tri_center-256x128-bs16x4-warmup10-erase0_5-labelsmooth_on-laststride1-bnneck_on-triplet_centerloss0_0005"
+OUTPUT_DIR: "/root/reid-strong-baseline/reid_baseline_review/Opensource_test/market1501/Experiment-all-tricks-tri_center-256x128-bs16x4-warmup10-erase0_5-labelsmooth_on-laststride1-bnneck_on-triplet_centerloss0_0005"
 
 
 
-2024-10-22 22:25:31,583 reid_baseline INFO: Running with config:
+2024-10-22 23:25:15,675 reid_baseline INFO: Running with config:
 DATALOADER:
-  NUM_INSTANCE: 2
+  NUM_INSTANCE: 8
   NUM_WORKERS: 4
   SAMPLER: softmax_triplet
 DATASETS:
   NAMES: market1501
-  ROOT_DIR: /home/ai/PycharmProjects/datasets
+  ROOT_DIR: /root/autodl-tmp/datasets
 INPUT:
   PADDING: 10
   PIXEL_MEAN: [0.485, 0.456, 0.406]
@@ -96,8 +96,8 @@ MODEL:
   NAME: resnet50
   NECK: bnneck
   PRETRAIN_CHOICE: imagenet
-  PRETRAIN_PATH: /home/ai/.cache/torch/hub/checkpoints/resnet50-0676ba61.pth
-OUTPUT_DIR: /home/ai/PycharmProjects/reid-strong-baseline/reid_baseline_review/Opensource_test/market1501/Experiment-all-tricks-tri_center-256x128-bs16x4-warmup10-erase0_5-labelsmooth_on-laststride1-bnneck_on-triplet_centerloss0_0005
+  PRETRAIN_PATH: /root/.cache/torch/hub/checkpoints/resnet50-0676ba61.pth
+OUTPUT_DIR: /root/reid-strong-baseline/reid_baseline_review/Opensource_test/market1501/Experiment-all-tricks-tri_center-256x128-bs16x4-warmup10-erase0_5-labelsmooth_on-laststride1-bnneck_on-triplet_centerloss0_0005
 SOLVER:
   BASE_LR: 0.00035
   BIAS_LR_FACTOR: 1
@@ -107,7 +107,7 @@ SOLVER:
   CLUSTER_MARGIN: 0.3
   EVAL_PERIOD: 40
   GAMMA: 0.1
-  IMS_PER_BATCH: 16
+  IMS_PER_BATCH: 128
   LOG_PERIOD: 20
   MARGIN: 0.3
   MAX_EPOCHS: 120
@@ -130,14 +130,8 @@ TEST:
   NECK_FEAT: after
   RE_RANKING: no
   WEIGHT: path
-2024-10-22 22:25:32,167 reid_baseline.train INFO: Start training
-2024-10-22 22:25:44,844 reid_baseline.train INFO: Epoch[1] Iteration[20/782] Loss: 9.117, Acc: 0.002, Base Lr: 3.82e-05
-2024-10-22 22:25:51,667 reid_baseline.train INFO: Epoch[1] Iteration[40/782] Loss: 9.046, Acc: 0.004, Base Lr: 3.82e-05
-2024-10-22 22:25:58,510 reid_baseline.train INFO: Epoch[1] Iteration[60/782] Loss: 8.938, Acc: 0.011, Base Lr: 3.82e-05
-2024-10-22 22:26:05,341 reid_baseline.train INFO: Epoch[1] Iteration[80/782] Loss: 8.810, Acc: 0.018, Base Lr: 3.82e-05
-2024-10-22 22:26:12,169 reid_baseline.train INFO: Epoch[1] Iteration[100/782] Loss: 8.718, Acc: 0.017, Base Lr: 3.82e-05
-2024-10-22 22:26:18,999 reid_baseline.train INFO: Epoch[1] Iteration[120/782] Loss: 8.562, Acc: 0.021, Base Lr: 3.82e-05
-2024-10-22 22:26:25,832 reid_baseline.train INFO: Epoch[1] Iteration[140/782] Loss: 8.449, Acc: 0.034, Base Lr: 3.82e-05
-2024-10-22 22:26:32,656 reid_baseline.train INFO: Epoch[1] Iteration[160/782] Loss: 8.367, Acc: 0.038, Base Lr: 3.82e-05
-2024-10-22 22:26:39,491 reid_baseline.train INFO: Epoch[1] Iteration[180/782] Loss: 8.243, Acc: 0.043, Base Lr: 3.82e-05
-2024-10-22 22:26:46,328 reid_baseline.train INFO: Epoch[1] Iteration[200/782] Loss: 8.142, Acc: 0.054, Base Lr: 3.82e-05
+2024-10-22 23:25:16,783 reid_baseline.train INFO: Start training
+2024-10-22 23:25:25,863 reid_baseline.train INFO: Epoch[1] Iteration[20/87] Loss: 11.988, Acc: 0.001, Base Lr: 3.82e-05
+2024-10-22 23:25:31,203 reid_baseline.train INFO: Epoch[1] Iteration[40/87] Loss: 11.437, Acc: 0.005, Base Lr: 3.82e-05
+2024-10-22 23:25:36,545 reid_baseline.train INFO: Epoch[1] Iteration[60/87] Loss: 10.918, Acc: 0.012, Base Lr: 3.82e-05
+2024-10-22 23:25:41,890 reid_baseline.train INFO: Epoch[1] Iteration[80/87] Loss: 10.418, Acc: 0.036, Base Lr: 3.82e-05

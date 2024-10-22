@@ -117,3 +117,9 @@ venv.bak/
 
 # mypy
 .mypy_cache/
+
+# weights
+*.pt
+
+# logs
+*.txt

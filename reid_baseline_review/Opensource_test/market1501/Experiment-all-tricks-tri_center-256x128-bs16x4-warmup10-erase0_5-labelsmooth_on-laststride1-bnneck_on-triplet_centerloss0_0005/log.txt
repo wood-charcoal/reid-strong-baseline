@@ -1,7 +1,7 @@
-2024-10-22 23:25:15,674 reid_baseline INFO: Using 1 GPUS
-2024-10-22 23:25:15,675 reid_baseline INFO: Namespace(config_file='configs/softmax_triplet_with_center.yml', opts=['MODEL.DEVICE_ID', "('0')", 'DATASETS.NAMES', "('market1501')", 'DATASETS.ROOT_DIR', "('/root/autodl-tmp/datasets')", 'OUTPUT_DIR', "('/root/reid-strong-baseline/reid_baseline_review/Opensource_test/market1501/Experiment-all-tricks-tri_center-256x128-bs16x4-warmup10-erase0_5-labelsmooth_on-laststride1-bnneck_on-triplet_centerloss0_0005')"])
-2024-10-22 23:25:15,675 reid_baseline INFO: Loaded configuration file configs/softmax_triplet_with_center.yml
-2024-10-22 23:25:15,675 reid_baseline INFO: 
+2024-10-23 01:54:00,643 reid_baseline INFO: Using 1 GPUS
+2024-10-23 01:54:00,643 reid_baseline INFO: Namespace(config_file='configs/softmax_triplet_with_center.yml', opts=['MODEL.DEVICE_ID', "('0')", 'DATASETS.NAMES', "('market1501')", 'DATASETS.ROOT_DIR', "('/root/autodl-tmp/datasets')", 'OUTPUT_DIR', "('/root/reid-strong-baseline/reid_baseline_review/Opensource_test/market1501/Experiment-all-tricks-tri_center-256x128-bs16x4-warmup10-erase0_5-labelsmooth_on-laststride1-bnneck_on-triplet_centerloss0_0005')"])
+2024-10-23 01:54:00,643 reid_baseline INFO: Loaded configuration file configs/softmax_triplet_with_center.yml
+2024-10-23 01:54:00,643 reid_baseline INFO: 
 MODEL:
   PRETRAIN_CHOICE: 'imagenet'
   PRETRAIN_PATH: '/root/.cache/torch/hub/checkpoints/resnet50-0676ba61.pth'
@@ -70,7 +70,7 @@ OUTPUT_DIR: "/root/reid-strong-baseline/reid_baseline_review/Opensource_test/mar
 
 
 
-2024-10-22 23:25:15,675 reid_baseline INFO: Running with config:
+2024-10-23 01:54:00,644 reid_baseline INFO: Running with config:
 DATALOADER:
   NUM_INSTANCE: 8
   NUM_WORKERS: 4
@@ -130,8 +130,11 @@ TEST:
   NECK_FEAT: after
   RE_RANKING: no
   WEIGHT: path
-2024-10-22 23:25:16,783 reid_baseline.train INFO: Start training
-2024-10-22 23:25:25,863 reid_baseline.train INFO: Epoch[1] Iteration[20/87] Loss: 11.988, Acc: 0.001, Base Lr: 3.82e-05
-2024-10-22 23:25:31,203 reid_baseline.train INFO: Epoch[1] Iteration[40/87] Loss: 11.437, Acc: 0.005, Base Lr: 3.82e-05
-2024-10-22 23:25:36,545 reid_baseline.train INFO: Epoch[1] Iteration[60/87] Loss: 10.918, Acc: 0.012, Base Lr: 3.82e-05
-2024-10-22 23:25:41,890 reid_baseline.train INFO: Epoch[1] Iteration[80/87] Loss: 10.418, Acc: 0.036, Base Lr: 3.82e-05
+2024-10-23 01:54:01,779 reid_baseline.train INFO: Start training
+2024-10-23 01:54:10,890 reid_baseline.train INFO: Epoch[1] Iteration[20/87] Loss: 11.677, Acc: 0.006, Base Lr: 3.82e-05
+2024-10-23 01:54:16,285 reid_baseline.train INFO: Epoch[1] Iteration[40/87] Loss: 11.222, Acc: 0.007, Base Lr: 3.82e-05
+2024-10-23 01:54:21,682 reid_baseline.train INFO: Epoch[1] Iteration[60/87] Loss: 10.791, Acc: 0.017, Base Lr: 3.82e-05
+2024-10-23 01:54:27,057 reid_baseline.train INFO: Epoch[1] Iteration[80/87] Loss: 10.357, Acc: 0.041, Base Lr: 3.82e-05
+2024-10-23 01:54:30,550 reid_baseline.train INFO: Epoch 1 done. Time per batch: 26.740[s] Speed: 426.0[samples/s]
+2024-10-23 01:54:30,550 reid_baseline.train INFO: ----------
+2024-10-23 01:54:35,395 reid_baseline.train INFO: Epoch[2] Iteration[20/87] Loss: 9.711, Acc: 0.065, Base Lr: 7.28e-05

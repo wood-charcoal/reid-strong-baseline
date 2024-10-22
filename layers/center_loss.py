@@ -57,7 +57,7 @@ class CenterLoss(nn.Module):
 
 
 if __name__ == '__main__':
-    use_gpu = False
+    use_gpu = True
     center_loss = CenterLoss(use_gpu=use_gpu)
     features = torch.rand(16, 2048)
     targets = torch.Tensor([0, 1, 2, 3, 2, 3, 1, 4, 5, 3, 2, 1, 0, 0, 5, 4]).long()

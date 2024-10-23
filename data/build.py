@@ -16,7 +16,7 @@ def make_data_loader(cfg):
     train_transforms = build_transforms(cfg, is_train=True)
     val_transforms = build_transforms(cfg, is_train=False)
     num_workers = cfg.DATALOADER.NUM_WORKERS
-    if len(cfg.DATASETS.NAMES) == 1:
+    if isinstance(cfg.DATASETS.NAMES, str) or len(cfg.DATASETS.NAMES) == 1:
         dataset = init_dataset(cfg.DATASETS.NAMES, root=cfg.DATASETS.ROOT_DIR)
     else:
         # TODO: add multi dataset to train

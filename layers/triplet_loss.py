@@ -32,6 +32,7 @@ def euclidean_dist(x, y):
     dist = xx + yy
     dist.addmm_(1, -2, x, y.t())
     dist = dist.clamp(min=1e-12).sqrt()  # for numerical stability
+    # dist = ||X - Y||^2 = ||X||^2 + ||Y||^2 - 2*X*Y_T
     return dist
 
 

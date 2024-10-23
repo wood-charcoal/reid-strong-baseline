@@ -40,12 +40,12 @@ class RandomIdentitySampler(Sampler):
             num = len(idxs)
             if num < self.num_instances:
                 num = self.num_instances
-            self.length += num - num % self.num_instances
+            self.length += num - num % self.num_instances  # discard the pic of an identity which could not form a group
 
     def __iter__(self):
         batch_idxs_dict = defaultdict(list)
 
-        for pid in self.pids:
+        for pid in self.pids: # [num_instances, ]
             idxs = copy.deepcopy(self.index_dic[pid])
             if len(idxs) < self.num_instances:
                 idxs = np.random.choice(idxs, size=self.num_instances, replace=True)
